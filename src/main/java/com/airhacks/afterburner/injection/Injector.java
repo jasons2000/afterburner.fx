@@ -58,7 +58,7 @@ public class Injector {
         //after the regular, conventional initialization and injection, perform postinjection
         Field[] fields = clazz.getDeclaredFields();
         for (final Field field : fields) {
-            if (field.isAnnotationPresent(Inject.class)) {
+            if (field.isAnnotationPresent(TopgunInject.class)) {
                 final String fieldName = field.getName();
                 final Object value = injectionContext.apply(fieldName);
                 if (value != null) {
